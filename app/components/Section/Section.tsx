@@ -1,15 +1,16 @@
-import React from 'react'
+import React, { ReactNode } from 'react';
 
 interface SectionProps {
-  children: React.ReactNode;
+  children: ReactNode;
+  className?: string;
 }
 
-const Section: React.FC<SectionProps> = ({ children }) => {
+const Section: React.FC<SectionProps> = ({ children, className }) => {
   return (
-    <section className="bg-white dark:bg-gray-900 py-20">
+    <section className={className + " py-20"}>
       {children}
     </section>
-  )
-}
+  );
+};
 
-export default Section
+export default Section;

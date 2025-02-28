@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
 @import "tailwindcss";
+
 
 @theme {
   --font-sans: var(--font-geist-sans);
@@ -6,13 +8,13 @@
 }
 
 :root {
-  --background: #ffffff;
+  --background: oklch(.21 .034 264.665);
   --foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: oklch(.21 .034 264.665);
     --foreground: #ededed;
   }
 }
@@ -20,5 +22,5 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Cairo", serif, Arial, Helvetica, sans-serif;
 }

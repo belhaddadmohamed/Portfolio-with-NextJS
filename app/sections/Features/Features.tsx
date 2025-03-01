@@ -10,7 +10,7 @@ const Features = () => {
                     <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Fullstack Development Skills</h2>
                     <p className="text-gray-500 sm:text-xl dark:text-gray-400">Explore a comprehensive set of skills essential for fullstack development, encompassing both frontend and backend technologies.</p>
                 </div>
-                <div className="space-y-8 grid cols-2 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-12 md:space-y-0">
+                <div className="space-y-8 grid grid-cols-3 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-12 md:space-y-0">
                     <Skill 
                         image="/images/icons/nextjs-svgrepo-com.svg"
                         title="Next.js"
@@ -38,7 +38,7 @@ const Features = () => {
                     />
                     <Skill 
                         image="/images/icons/database-svgrepo-com.svg"
-                        title="Database Management"
+                        title="Databases"
                         description="Work with databases like MongoDB, MySQL, and PostgreSQL to store and manage data efficiently."
                     />
                     <Skill 

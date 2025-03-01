@@ -41,6 +41,22 @@ const Portfolio = () => {
             description="An innovative college application platform built with Django, providing students a collaborative environment."
             readTime="3 mins"
           />
+          <Project
+            image="/images/projects/prj_elearning.png"
+            tag="Education"
+            date="20 March"
+            title="E-learning System"
+            description="A comprehensive e-learning system built with LMS, offering a variety of courses and interactive learning tools."
+            readTime="4 mins"
+          />
+          <Project
+            image="/images/projects/prj_chat.avif"
+            tag="Communication"
+            date="20 March"
+            title="Chat Application"
+            description="A real-time chat application built with Django and WebSockets, providing seamless communication."
+            readTime="5 mins"
+          />
         </div>
       </div>
       

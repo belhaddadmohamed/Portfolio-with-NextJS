@@ -7,9 +7,10 @@ const Features = () => {
         <Section className="bg-white dark:bg-gray-800">
             <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
                 <div className="max-w-screen-md mb-8 lg:mb-16">
-                    <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Fullstack Development Skills</h2>
-                    <p className="text-gray-500 sm:text-xl dark:text-gray-400">Explore a comprehensive set of skills essential for fullstack development, encompassing both frontend and backend technologies.</p>
+                    <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Data Science & Fullstack Development Skills</h2>
+                    <p className="text-gray-500 sm:text-xl dark:text-gray-400">Explore a comprehensive set of skills essential for fullstack development and data science.</p>
                 </div>
+
                 <div className="space-y-8 grid grid-cols-3 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-12 md:space-y-0">
                     <Skill 
                         image="/images/icons/nextjs-svgrepo-com.svg"

@@ -2,7 +2,6 @@ import React from 'react'
 import Image from 'next/image'
 
 
-
 interface ProjectProps {
     image: string;
     tag: string;
@@ -10,17 +9,17 @@ interface ProjectProps {
     title: string;
     description: string;
     readTime: string;
-  }
-  
+}
 
-const Project:React.FC<ProjectProps> = ({image, tag, date, title, description, readTime}) => {
+
+const Project = (props: ProjectProps) => {
   return (
             <div className="rounded overflow-hidden shadow-lg">
                 <a href="#"></a>
                 <div className="relative">
                     <a href="#">
                         <Image className="w-full"
-                            src={image}
+                            src={props.image}
                             alt="Sunset in the mountains"
                             width={100}
                             height={50} />
@@ -31,25 +30,25 @@ const Project:React.FC<ProjectProps> = ({image, tag, date, title, description, r
                     <a href="#!">
                         <div
                             className="absolute bottom-0 left-0 bg-blue-600 px-4 py-2 text-white text-sm hover:bg-white hover:text-blue-600 transition duration-500 ease-in-out">
-                            {tag}
+                            {props.tag}
                         </div>
                     </a>
-                    <a href="!#">
+                    {/* <a href="!#">
                         <div
                             className="text-sm absolute top-0 right-0 bg-blue-600 px-4 text-white rounded-full h-16 w-16 flex flex-col items-center justify-center mt-3 mr-3 hover:bg-white hover:text-blue-600 transition duration-500 ease-in-out">
-                            <span className="font-bold">{date.split(' ')[0]}</span>
-                            <small>{date.split(' ')[1]}</small>
+                            <span className="font-bold">{props.date.split(' ')[0]}</span>
+                            <small>{props.date.split(' ')[1]}</small>
                         </div>
-                    </a>
+                    </a> */}
                 </div>
 
 
                 <div className="px-6 py-4">
                     <a href="#"
                         className="font-semibold text-lg inline-block hover:text-blue-600 transition duration-500 ease-in-out">
-                        {title}</a>
+                        {props.title}</a>
                     <p className="text-gray-500 text-sm">
-                        {description}
+                        {props.description}
                     </p>
                 </div>
 
@@ -68,7 +67,7 @@ const Project:React.FC<ProjectProps> = ({image, tag, date, title, description, r
                                 </g>
                             </g>
                         </svg>
-                        <span className="ml-1 text-gray-400 text-sm italic">{readTime} read</span>
+                        <span className="ml-1 text-gray-400 text-sm italic">{props.readTime} read</span>
                     </span>
                 </div>
             </div>

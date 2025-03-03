@@ -1,6 +1,7 @@
 import React from 'react'
 import Section from '@/app/components/Section/Section'
 import Project from '@/app/components/Project/Project'
+import Modal from '@/app/components/Modal/Modal'
 
 const Portfolio = () => {
   return (
@@ -21,10 +22,11 @@ const Portfolio = () => {
             image="/images/projects/prj_ecom.jpg"
             tag="E-commerce"
             date="20 March"
-            title="Ecommerce application"
+            title="Ecommerce Application"
             description="A robust ecommerce application built with Django."
             readTime="3 mins"
           />
+          <Modal/>
           <Project
             image="/images/projects/prj_studybud.png"
             tag="Forum"
@@ -45,7 +47,7 @@ const Portfolio = () => {
             image="/images/projects/prj_elearning.png"
             tag="Education"
             date="20 March"
-            title="E-learning System"
+            title="E-learning Platform"
             description="A comprehensive e-learning system built with LMS, offering a variety of courses and interactive learning tools."
             readTime="4 mins"
           />
@@ -56,6 +58,14 @@ const Portfolio = () => {
             title="Chat Application"
             description="A real-time chat application built with Django and WebSockets, providing seamless communication."
             readTime="5 mins"
+          />
+          <Project
+            image="/images/projects/prj_crc.jpg"
+            tag="Healthcare"
+            date="20 March"
+            title="Deep Learning Models for CRC Detection and Classification"
+            description="A cutting-edge project utilizing deep learning models to detect and classify colorectal cancer from medical images."
+            readTime="6 mins"
           />
         </div>
       </div>

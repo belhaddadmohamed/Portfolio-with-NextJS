@@ -6,6 +6,7 @@ import Footer from "./sections/Footer/Footer";
 import Header from "./sections/Header/Header";
 import Hero from "./sections/Hero/Hero";
 import Portfolio from "./sections/Portfolio/Portfolio";
+import Modal from "./components/Modal/Modal";
 
 export default function Home() {
   return (

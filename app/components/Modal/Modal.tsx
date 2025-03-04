@@ -1,46 +1,101 @@
-import React from 'react'
+"use client";
 
-const Modal = () => {
-  return (
-    <>
-        <button 
-        data-dialog-target="animated-modal"
-        className="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2" type="button">
-        Open Animation Modal
-        </button>
-        <div
-        data-dialog-backdrop="animated-modal"
-        data-dialog-backdrop-close="true"
-        className="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
-        >
-        <div
-            data-dialog="animated-modal"
-            data-dialog-mount="opacity-100 translate-y-0 scale-100"
-            data-dialog-unmount="opacity-0 -translate-y-28 scale-90 pointer-events-none"
-            data-dialog-transition="transition-all duration-300"
-            className="relative m-4 p-4 w-2/5 min-w-[40%] max-w-[40%] rounded-lg bg-white shadow-sm"
-        >
-            <div className="flex shrink-0 items-center pb-4 text-xl font-medium text-slate-800">
-            Custom Animation Modal
-            </div>
-            <div className="relative border-t border-slate-200 py-4 leading-normal text-slate-600 font-light">
-            The key to more success is to have a lot of pillows. Put it this
-            way, it took me twenty five years to get these plants, twenty five
-            years of blood sweat and tears, and I&apos;m never giving up,
-            I&apos;m just getting started. I&apos;m up to something. Fan luv.
-            </div>
-            <div className="flex shrink-0 flex-wrap items-center pt-4 justify-end">
-            <button data-dialog-close="true" className="rounded-md border border-transparent py-2 px-4 text-center text-sm transition-all text-slate-600 hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
-                Cancel
-            </button>
-            <button data-dialog-close="true" className="rounded-md bg-green-600 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-green-700 focus:shadow-none active:bg-green-700 hover:bg-green-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2" type="button">
-                Confirm
-            </button>
-            </div>
-        </div>
-        </div>
-    </>
-  )
+// import { useState } from "react";
+import Image from "next/image";
+
+interface ModalProps {
+    imageUrl: string;
+    title: string;
+    description: string;
+    projectLink: string;
+    isOpen: boolean;
+    onClose: () => void;
 }
 
-export default Modal
+const Modal = ({ imageUrl, title, description, projectLink, isOpen, onClose }: ModalProps) => {
+    if (!isOpen) return null;
+
+    return (
+        <>
+            <div
+                style={{ backgroundColor: 'rgba(0, 0, 0, 0.9)' }}
+                className="fixed inset-0 z-50 flex justify-center items-center w-full h-full overflow-y-auto overflow-x-hidden"
+                onClick={onClose}
+            >
+                <div
+                    className="relative p-4 w-full max-w-2xl max-h-full"
+                    onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal
+                >
+                    {/* Modal content */}
+                    <div className="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
+                        {/* Modal header */}
+                        <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">
+                            <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                                {title}
+                            </h3>
+                            <button
+                                onClick={onClose}
+                                className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                            >
+                                <svg
+                                    className="w-3 h-3"
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 14 14"
+                                >
+                                    <path
+                                        stroke="currentColor"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                                    />
+                                </svg>
+                                <span className="sr-only">Close modal</span>
+                            </button>
+                        </div>
+                        {/* Modal body */}
+                        <div className="p-4 md:p-5 space-y-4">
+                            <div className="w-full">
+                                <Image
+                                    src={imageUrl}
+                                    alt={title}
+                                    width={600}
+                                    height={600}
+                                    className="w-full h-auto rounded-lg object-cover max-h-96"
+                                />
+                            </div>
+                            <div className="space-y-4">
+                                <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                                    {description}
+                                </p>
+                            </div>
+                        </div>
+                        {/* Modal footer */}
+                        <div className="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+                            <button
+                                onClick={onClose}
+                                className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                            >
+                                Close
+                            </button>
+                            {projectLink && (
+                                <a
+                                    href={projectLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+                                >
+                                    View Project
+                                </a>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
+    );
+};
+
+export default Modal;

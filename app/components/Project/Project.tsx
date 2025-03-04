@@ -1,6 +1,8 @@
-import React from 'react'
-import Image from 'next/image'
+"use client";
 
+import React, { useState } from 'react'
+import Image from 'next/image'
+import Modal from '@/app/components/Modal/Modal'
 
 interface ProjectProps {
     image: string;
@@ -13,8 +15,20 @@ interface ProjectProps {
 
 
 const Project = (props: ProjectProps) => {
-  return (
-            <div className="rounded overflow-hidden shadow-lg">
+    const [isOpen, setIsOpen] = useState(false);
+
+    return (
+        <>
+            <Modal imageUrl={props.image}
+                title={props.title}
+                description={props.description}
+                projectLink={"link"}
+                isOpen={isOpen}
+                onClose={() => setIsOpen(false)} />
+
+
+
+            <div className="rounded overflow-hidden shadow-lg" onClick={() => setIsOpen(true)}>
                 <a href="#"></a>
                 <div className="relative">
                     <a href="#">
@@ -27,7 +41,7 @@ const Project = (props: ProjectProps) => {
                             className="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
                         </div>
                     </a>
-                    <a href="#!">
+                    <a href="#">
                         <div
                             className="absolute bottom-0 left-0 bg-blue-600 px-4 py-2 text-white text-sm hover:bg-white hover:text-blue-600 transition duration-500 ease-in-out">
                             {props.tag}
@@ -54,7 +68,7 @@ const Project = (props: ProjectProps) => {
 
 
                 <div className="px-6 py-4 flex flex-row items-center">
-                    <span 
+                    <span
                         className="py-1 text-sm font-regular text-gray-500 mr-1 flex flex-row justify-between items-center">
                         <svg height="13px" width="13px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                             xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
@@ -71,7 +85,8 @@ const Project = (props: ProjectProps) => {
                     </span>
                 </div>
             </div>
-  )
+        </>
+    )
 }
 
 export default Project

@@ -1,7 +1,7 @@
 import React from 'react'
 import Section from '@/app/components/Section/Section'
 import Project from '@/app/components/Project/Project'
-import Modal from '@/app/components/Modal/Modal'
+// import Modal from '@/app/components/Modal/Modal'
 
 const Portfolio = () => {
   return (
@@ -26,7 +26,6 @@ const Portfolio = () => {
             description="A robust ecommerce application built with Django."
             readTime="3 mins"
           />
-          <Modal/>
           <Project
             image="/images/projects/prj_studybud.png"
             tag="Forum"

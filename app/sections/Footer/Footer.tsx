@@ -6,7 +6,7 @@ import Image from 'next/image'
 const Footer = () => {
   return (
 
-    <footer className="bg-gray-50 dark:bg-gray-800">
+    <footer id="about" className="bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto">
             <div className="flex flex-wrap justify-between py-10">
                 {/* Logo */}
@@ -97,7 +97,7 @@ const Footer = () => {
                     <form className="mt-4">
                     <div className="flex">
                         <input type="email" className="w-full rounded-l-lg border border-gray-300 px-4 py-2 focus:outline-none" placeholder="Your e-mail" />
-                        <button type="submit" className="rounded-r-lg bg-yellow px-4 py-2 text-white hover:bg-yellow-300">Subscribe</button>
+                        <button type="submit" className="rounded-r-lg cursor-pointer bg-blue-700 border border-blue-700 hover:bg-blue-800 px-4 py-2 text-white">Subscribe</button>
                     </div>
                     </form>
                 </div>

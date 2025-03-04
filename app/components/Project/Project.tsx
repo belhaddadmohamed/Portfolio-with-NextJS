@@ -17,6 +17,7 @@ interface ProjectProps {
 const Project = (props: ProjectProps) => {
     const [isOpen, setIsOpen] = useState(false);
 
+    
     return (
         <>
             <Modal imageUrl={props.image}
@@ -29,9 +30,9 @@ const Project = (props: ProjectProps) => {
 
 
             <div className="rounded overflow-hidden shadow-lg" onClick={() => setIsOpen(true)}>
-                <a href="#"></a>
+                <a href="#portoflio"></a>
                 <div className="relative">
-                    <a href="#">
+                    <a href="#portoflio">
                         <Image className="w-full"
                             src={props.image}
                             alt="Sunset in the mountains"
@@ -41,7 +42,7 @@ const Project = (props: ProjectProps) => {
                             className="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
                         </div>
                     </a>
-                    <a href="#">
+                    <a href="#portoflio">
                         <div
                             className="absolute bottom-0 left-0 bg-blue-600 px-4 py-2 text-white text-sm hover:bg-white hover:text-blue-600 transition duration-500 ease-in-out">
                             {props.tag}
@@ -58,7 +59,7 @@ const Project = (props: ProjectProps) => {
 
 
                 <div className="px-6 py-4">
-                    <a href="#"
+                    <a href="#portoflio"
                         className="font-semibold text-lg inline-block hover:text-blue-600 transition duration-500 ease-in-out">
                         {props.title}</a>
                     <p className="text-gray-500 text-sm">

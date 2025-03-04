@@ -3,11 +3,12 @@ import React, { ReactNode } from 'react';
 interface SectionProps {
   children: ReactNode;
   className?: string;
+  id?: string;
 }
 
-const Section: React.FC<SectionProps> = ({ children, className }) => {
+const Section: React.FC<SectionProps> = ({ children, className, id }) => {
   return (
-    <section className={className + " py-20"}>
+    <section id={id} className={className + " py-20"}>
       {children}
     </section>
   );

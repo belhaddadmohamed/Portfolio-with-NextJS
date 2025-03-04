@@ -6,7 +6,6 @@ import Footer from "./sections/Footer/Footer";
 import Header from "./sections/Header/Header";
 import Hero from "./sections/Hero/Hero";
 import Portfolio from "./sections/Portfolio/Portfolio";
-import Modal from "./components/Modal/Modal";
 
 export default function Home() {
   return (
@@ -16,7 +15,7 @@ export default function Home() {
       <Hero />
       <Features />
       <Portfolio />
-      <hr className="w-6/7 mx-auto" />
+      <hr className="w-6/7 mx-auto border-gray-700" />
       <Contact />
       <Footer />
     </>

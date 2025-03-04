@@ -5,7 +5,7 @@ import Project from '@/app/components/Project/Project'
 
 const Portfolio = () => {
   return (
-    <Section className="bg-white dark:bg-gray-900 antialiased">
+    <Section id='portfolio' className="bg-white dark:bg-gray-900 antialiased">
       <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-gray-900 sm:text-4xl dark:text-white">
             Our work

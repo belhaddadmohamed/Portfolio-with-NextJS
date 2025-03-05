@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import Image from 'next/image';
+import ThemeToggle from '@/app/components/ThemeToggle/ThemeToggle';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -96,6 +97,8 @@ const Header = () => {
             </li>
           </ul>
         </div>
+
+        <ThemeToggle />
       </div>
     </nav>
   );

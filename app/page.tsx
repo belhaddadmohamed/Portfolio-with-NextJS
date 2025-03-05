@@ -15,7 +15,7 @@ export default function Home() {
       <Hero />
       <Features />
       <Portfolio />
-      <hr className="w-6/7 mx-auto border-gray-700" />
+      <hr className="w-6/7 mx-auto border-gray-300 dark:border-gray-700" />
       <Contact />
       <Footer />
     </>

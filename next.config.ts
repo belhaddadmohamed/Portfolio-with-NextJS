@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  darkMode: 'class', // This enables class-based dark mode
+  // darkMode: 'class', // This enables class-based dark mode
   
   // output: 'export',
   images: {

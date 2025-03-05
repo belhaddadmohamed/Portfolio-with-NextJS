@@ -15,7 +15,7 @@ const Header = () => {
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="" className="flex items-center space-x-3 rtl:space-x-reverse">
           <Image
-          src="/images/belhaddad_logo.png"
+          src="/images/logo_light.png"
           alt="Belhaddad logo"
           width={75}
           height={50}

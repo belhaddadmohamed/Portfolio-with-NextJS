@@ -14,7 +14,7 @@ const Footer = () => {
                     <Link href="/index.html" className="flex justify-center">
                     <Image  
                         className=" mx-auto md:mx-0"
-                        src="/images/belhaddad_logo.png" 
+                        src="/images/logo_light.png" 
                         alt="Logo" 
                         width={144}
                         height={100}/>
